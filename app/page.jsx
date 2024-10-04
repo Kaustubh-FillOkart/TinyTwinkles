@@ -115,7 +115,7 @@ export default function Home() {
       <div className="absolute bottom-0 left-0 w-24 h-24 md:w-32 md:h-32"></div>
       <div className="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32"></div>
       <h1 className="text-4xl font-bold text-center mb-8 text-pink-500">
-        It's a Boy and a Girl!
+        It&apos;s a Boy and a Girl!
       </h1>
 
       <div className="max-w-md w-full bg-transparent rounded-3xl p-[2px] bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 z-30">
@@ -208,7 +208,7 @@ export default function Home() {
                 ✕
               </button>
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
-                Parents' Access Only
+                Parents&apos; Access Only
               </h2>
               <p className="mb-4 text-center text-gray-600">
                 This section is reserved for Mommy and Daddy.
