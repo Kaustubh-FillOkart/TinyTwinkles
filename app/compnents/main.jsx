@@ -111,14 +111,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-pink-50 text-gray-800 p-6 flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-24 h-24 md:w-32 md:h-32"></div>
-      <div className="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32"></div>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-pink-50 text-gray-800 p-6 flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-center mb-8 text-pink-500">
         It's a Boy and a Girl!
       </h1>
 
-      <div className="max-w-md w-full bg-transparent rounded-3xl p-[2px] bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 z-30">
+      <div className="max-w-md w-full bg-transparent rounded-3xl p-[2px] bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400">
         <div className=" bg-white bg-opacity-100 rounded-3xl shadow-lg p-6 space-y-4 ">
           <p className="text-center text-lg text-gray-600 mb-6">
             Help us choose names for our precious twins!
@@ -198,7 +196,7 @@ export default function Home() {
       </div>
 
       {showOverlay && (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center z-40">
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
           <div className="relative max-w-xl w-full rounded-3xl m-4 p-[2px] bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400">
             <div className=" bg-white rounded-3xl shadow-xl p-8  ">
               <button
