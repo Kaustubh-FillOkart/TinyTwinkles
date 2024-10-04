@@ -10,6 +10,7 @@ export default function Home() {
   const [counter, setCounter] = useState(0);
   const [isInIndia, setIsInIndia] = useState(false);
   const router = useRouter();
+  //
 
   useEffect(() => {
     getCounter();
