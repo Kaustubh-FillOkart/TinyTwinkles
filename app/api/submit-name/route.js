@@ -65,7 +65,7 @@ export async function PATCH(req) {
 
     const result = await db
       .collection("names")
-      .updateOne({ _id: new ObjectId(id) }, { $set: { bg: bg } });
+      .updateOne({ _id: new ObjectId(id.toString()) }, { $set: { bg: bg } });
 
     if (result.matchedCount === 0) {
       return NextResponse.json(
@@ -76,7 +76,7 @@ export async function PATCH(req) {
 
     return NextResponse.json({
       message: "Background color updated successfully",
-      modifiedCount: result.modifiedCount,
+      modifiedCount: result,
     });
   } catch (e) {
     console.error("Database error:", e);

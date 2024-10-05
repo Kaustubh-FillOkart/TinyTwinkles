@@ -56,7 +56,7 @@ const Page = ({ params }) => {
     }
   };
 
-  if (loading) {
+  if (loading || !names) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-2xl font-semibold text-gray-700">Loading...</div>
@@ -86,7 +86,7 @@ const Page = ({ params }) => {
             >
               <div className="bg-white rounded-3xl shadow-lg">
                 <div
-                  className={`markers bg-white rounded-3xl shadow-lg p-6 space-y-2 h-full bg-[${name?.bg}] relative`}
+                  className={`markers bg-white rounded-3xl shadow-lg p-6 space-y-2 h-full bg-[${name.bg}] relative `}
                 >
                   <div className="absolute top-2 right-2 cursor-pointer flex flex-row gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
                     <p
@@ -97,7 +97,7 @@ const Page = ({ params }) => {
                     </p>
                     <p
                       className="text-[#8120ffef]"
-                      onClick={() => onUpdate(name._id, "#8120ff2d")}
+                      onClick={() => onUpdate(name._id, "#ffffff")}
                     >
                       <MdOutlineCircle className="h-5 w-5" />
                     </p>
@@ -115,6 +115,10 @@ const Page = ({ params }) => {
                   <p className="text-gray-700 font-medium">
                     Second Name:{" "}
                     <span className="text-pink-500">{name.secondName}</span>
+                  </p>
+                  <p className="text-gray-700 font-medium">
+                    Second Name:{" "}
+                    <span className="text-pink-500">{name.bg}</span>
                   </p>
                 </div>
               </div>
