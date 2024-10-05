@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import confetti from "canvas-confetti";
+import { useToast } from "@/components/Toast/ToastProvider";
 
 export default function Home() {
   const { register, handleSubmit, resetField } = useForm();
@@ -10,7 +11,7 @@ export default function Home() {
   const [counter, setCounter] = useState(0);
   const [isInIndia, setIsInIndia] = useState(false);
   const router = useRouter();
-  //
+  const { showToast } = useToast();
 
   useEffect(() => {
     getCounter();
@@ -56,7 +57,7 @@ export default function Home() {
 
   const onSubmit = async (data) => {
     if (!data.firstName && !data.lastName) {
-      alert("Come on atleast fill one name :)");
+      showToast("Come on atleast fill one name :)");
       return;
     }
     try {
@@ -70,7 +71,7 @@ export default function Home() {
 
       const result = await response.json();
       console.log(result);
-      alert("Your name suggestions have been submitted. Thank you!");
+      showToast("Thank you for your suggestion ❤️!!!");
       getCounter();
       resetField("firstName");
       resetField("secondName");
@@ -86,7 +87,7 @@ export default function Home() {
     if (password === "kanha") {
       router.push("/kanha");
     } else {
-      alert("Sorry, only Mommy and Daddy have access to this!");
+      showToast("Sorry, only Mommy and Daddy have access to this!");
     }
   };
 
