@@ -82,8 +82,8 @@ export default function Home() {
   };
 
   const onClickNames = async (data) => {
-    const { name: userName, password } = data;
-    if (userName === "kanha" && password === "kanha") {
+    const { password } = data;
+    if (password === "kanha") {
       router.push("/kanha");
     } else {
       alert("Sorry, only Mommy and Daddy have access to this!");
@@ -177,7 +177,7 @@ export default function Home() {
 
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-gradient-to-r from-blue-400 to-pink-400 text-white rounded-full hover:from-blue-500 hover:to-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
+              className="w-full py-2 px-4 bg-gradient-to-r from-blue-400 to-pink-400 text-white rounded-full hover:from-blue-500 hover:to-pink-500 outline-none  transition"
             >
               Submit Suggestions
             </button>
@@ -216,19 +216,14 @@ export default function Home() {
               </p>
               <form onSubmit={handleSubmit(onClickNames)} className="space-y-4">
                 <input
-                  {...register("name", { required: true })}
-                  className="w-full px-4 py-2 border-2 border-gray-200 rounded-full focus:outline-none focus:border-blue-400"
-                  placeholder="Name"
-                />
-                <input
                   {...register("password", { required: true })}
                   type="password"
-                  className="w-full px-4 py-2 border-2 border-gray-200 rounded-full focus:outline-none focus:border-blue-400"
+                  className="w-full px-4 py-2 border-2 border-gray-200 rounded-full outline-none focus:border-gray-400"
                   placeholder="Password"
                 />
                 <button
                   type="submit"
-                  className="w-full py-2 px-4 bg-gradient-to-r from-blue-400 to-pink-400 text-white rounded-full hover:from-blue-500 hover:to-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
+                  className="w-full py-2 px-4 bg-gradient-to-r from-blue-400 to-pink-400 text-white rounded-full hover:from-blue-500 hover:to-pink-500 focus:outline-none transition"
                 >
                   Access
                 </button>
