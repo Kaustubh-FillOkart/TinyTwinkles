@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { MdOutlineCircle } from "react-icons/md";
+import DynamicBackgroundCard from "@/components/DynamicBg/DynamicBackgroundCard";
 
 const Page = ({ params }) => {
   const [names, setNames] = useState([]);
@@ -79,50 +80,12 @@ const Page = ({ params }) => {
       </h1>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {names.map((name, index) => (
-            <div
-              key={name._id || index}
-              className={`bg-transparent rounded-3xl p-[2px] bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 group`}
-            >
-              <div className="bg-white rounded-3xl shadow-lg">
-                <div
-                  className={`markers bg-white rounded-3xl shadow-lg p-6 space-y-2 h-full bg-[${name.bg}] relative `}
-                >
-                  <div className="absolute top-2 right-2 cursor-pointer flex flex-row gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                    <p
-                      className="text-[#27ff4fe5]"
-                      onClick={() => onUpdate(name._id, "#27ff4f33")}
-                    >
-                      <FaCheck className="h-5 w-5" />
-                    </p>
-                    <p
-                      className="text-[#8120ffef]"
-                      onClick={() => onUpdate(name._id, "#ffffff")}
-                    >
-                      <MdOutlineCircle className="h-5 w-5" />
-                    </p>
-                    <p
-                      className="text-[#ff0404d7]"
-                      onClick={() => onUpdate(name._id, "#ff0c0c2e")}
-                    >
-                      <RxCross2 className="h-5 w-5" />
-                    </p>
-                  </div>
-                  <p className="text-gray-700 font-medium">
-                    First Name:{" "}
-                    <span className="text-blue-500">{name.firstName}</span>
-                  </p>
-                  <p className="text-gray-700 font-medium">
-                    Second Name:{" "}
-                    <span className="text-pink-500">{name.secondName}</span>
-                  </p>
-                  <p className="text-gray-700 font-medium">
-                    Second Name:{" "}
-                    <span className="text-pink-500">{name.bg}</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+          {names.map((name) => (
+            <DynamicBackgroundCard
+              key={name._id}
+              name={name}
+              onUpdate={onUpdate}
+            />
           ))}
         </div>
         {names.length === 0 && (

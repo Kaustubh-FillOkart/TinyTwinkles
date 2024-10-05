@@ -71,7 +71,7 @@ export default function Home() {
 
       const result = await response.json();
       console.log(result);
-      showToast("Thank you for your suggestion ❤️!!!");
+      showToast("Thank you for your suggestion ❤️");
       getCounter();
       resetField("firstName");
       resetField("secondName");
