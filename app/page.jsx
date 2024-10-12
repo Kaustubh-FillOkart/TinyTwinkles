@@ -56,7 +56,7 @@ export default function Home() {
   };
 
   const onSubmit = async (data) => {
-    if (!data.firstName && !data.lastName) {
+    if (!data.firstName && !data.secondName) {
       showToast("Come on atleast fill one name :)");
       return;
     }
