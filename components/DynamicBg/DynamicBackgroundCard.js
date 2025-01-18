@@ -71,6 +71,10 @@ const DynamicBackgroundCard = ({ name, onUpdate }) => {
           <p className="text-gray-700 font-medium">
             Second Name Meaning:{" "}
             <span className="text-pink-500">{name.meaningTwo}</span>
+          </p>{" "}
+          <p className="text-gray-700 font-medium">
+            User name:{" "}
+            <span className="">{name.userName}</span>
           </p>
         </div>
       </div>
